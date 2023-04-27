@@ -1,11 +1,19 @@
 const fetchPokemon = (pokemon_name) => {
-  fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon_name}`)
-    .then((response) => {
-      // use of curly braces necessitates explicit return, without them the anonymous function implicitly returns.
-      return response.json()})
+  return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon_name}`)
+    .then((response) => response.json())
+    // use of curly braces necessitates explicit return, without them the anonymous function implicitly returns. response.json()})
     .then((data) => {
-      console.log(data)
+      let pokemon = {};
+      pokemon.name = data.name;
+      pokemon.id = data.id;
+      pokemon.height = data.height;
+      pokemon.weight = data.weight;
+      return pokemon;
     });
 };
 
 module.exports = fetchPokemon
+
+
+// fetchPokemon('pikachu')
+//   .then((pokemon) => console.log(pokemon))
