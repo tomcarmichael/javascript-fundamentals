@@ -5,7 +5,7 @@ class Pokedex {
   }
 
   catch(pokemon_name) {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon_name}`)
+    return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon_name}`)
       .then((response) => response.json())
       .then((data) => {
         let pokemon = {};
@@ -22,4 +22,4 @@ class Pokedex {
   }
  }
 
- module.exports = Pokedex
+ module.exports = Pokedex;

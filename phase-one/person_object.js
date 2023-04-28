@@ -12,3 +12,5 @@ const person = {
 console.log(person.address.city); 
 // Print the value of the second hobbies value ('tennis').
 console.log(person.hobbies[1]); 
+
+console.log(person['age']); 
